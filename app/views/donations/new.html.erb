@@ -1,0 +1,11 @@
+<%= form_for @donation do |f| %>
+  <div>
+    <%= f.label "Your Name" %>
+    <%= f.text_field :donor %>
+  </div>
+  <div>
+    <%= f.label "Donation Amount (in $)" %>
+    <%= f.text_field :amount %>
+  </div>
+  <%= submit_tag "Donate", :class => "button" %>
+<% end %>

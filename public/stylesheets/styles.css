@@ -1,0 +1,46 @@
+h1 {
+  margin: 0;
+}
+
+body {
+  width: 950px;
+  margin: 50px auto;
+}
+
+#header {
+  -moz-border-radius-topleft:30px;
+  -moz-border-radius-topright:30px;
+  background:none repeat scroll 0 0 #FCCE00;
+  margin-top:10px;
+  padding:10px 30px;
+}
+
+#wrapper {
+  -moz-border-radius-bottomleft:30px;
+  -moz-border-radius-bottomright:30px;
+  border:2px solid #FCCE00;
+  padding:10px 30px;
+}
+
+a.button, a.button:hover {
+  background: #FCCE00;
+  color: #000;
+  text-decoration: none;
+  padding: 8px;
+  -moz-border-radius: 6px;
+}
+
+a.button:hover {
+  font-weight: bold;
+}
+
+label {
+  width: 200px;
+  text-align: right;
+  float: left;
+  margin-right: 15px;
+}
+
+input.button {
+  margin-left: 215px;
+}
