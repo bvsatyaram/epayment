@@ -6,7 +6,8 @@ class PaymentNotification < ActiveRecord::Base
   private
 
   def mark_donation_complete
-    if status == "completed"
+    if status == "Completed"
+      donation.mark_successful!
     end
   end
 end

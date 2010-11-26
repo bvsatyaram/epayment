@@ -1,7 +1,6 @@
 Epayment::Application.routes.draw do
-  get "payment_notifications/create"
-
   resources :donations
+  resources :payment_notifications
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

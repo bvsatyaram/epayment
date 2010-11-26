@@ -1,2 +1,18 @@
 <p>Even a small contribution can make a difference!!</p>
 <%= link_to "Contribute to the cause", new_donation_path, :class => 'button' %>
+
+<% unless @recent_donations.empty? %>
+  <h2>Recent Donations</h2>
+  <table>
+    <tr>
+      <th>Donor Name</th>
+      <th>Donation Amount</th>
+    </tr>
+    <% @recent_donations.each do |donation| %>
+    <tr>
+      <td><%= donation.donor %></td>
+      <td><%= donation.amount %></td>
+    </tr>
+    <% end %>
+  </table>
+<% end %>

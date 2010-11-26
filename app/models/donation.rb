@@ -1,5 +1,8 @@
 class Donation < ActiveRecord::Base
-  def paypal_url(return_url)
+
+  named_scope :successful, :conditions => ["donations.donated_at IS NOT NULL"]
+
+  def paypal_url(return_url, notify_url)
     values = {
       :business => 'seller_1290763494_biz@gmail.com',
       :cmd => '_cart',
@@ -8,10 +11,15 @@ class Donation < ActiveRecord::Base
       :invoice => id,
       "amount_1" => amount,
       "item_name_1" => "Donation for cause",
-#      "item_number_1" => 1,
-      "quantity_1" => 1
+      "quantity_1" => 1,
+      :notify_url => notify_url
     }
 
     "https://www.sandbox.paypal.com/cgi-bin/webscr?" + values.to_query
+  end
+
+  def mark_successful!
+    self.donation_time = Time.now
+    self.save!
   end
 end
