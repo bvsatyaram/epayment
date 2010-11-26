@@ -1,6 +1,6 @@
 class Donation < ActiveRecord::Base
 
-  named_scope :successful, :conditions => ["donations.donated_at IS NOT NULL"]
+  scope :successful, :conditions => ["donations.donated_at IS NOT NULL"]
 
   def paypal_url(return_url, notify_url)
     values = {
@@ -19,7 +19,7 @@ class Donation < ActiveRecord::Base
   end
 
   def mark_successful!
-    self.donation_time = Time.now
+    self.donated_at = Time.now
     self.save!
   end
 end
