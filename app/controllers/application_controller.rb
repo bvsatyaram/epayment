@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
 
   def fetch_current_donation
     if session[:donation_id]
-      @current_donation ||= Donation.find(session[:session_id])
+      @current_donation ||= Donation.find(session[:donation_id])
       session[:donation_id] = nil if @current_donation.donated_at
     end
     if session[:donation_id].nil?
