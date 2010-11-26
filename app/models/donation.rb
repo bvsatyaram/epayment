@@ -1,7 +1,7 @@
 class Donation < ActiveRecord::Base
   def paypal_url(return_url)
     values = {
-      :business => 'bvsell_1289559584_biz@gmail.com',
+      :business => 'seller_1290763494_biz@gmail.com',
       :cmd => '_cart',
       :upload => 1,
       :return => return_url,
